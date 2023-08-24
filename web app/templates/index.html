@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Corn Seed Classifier</title>
+    </head>
+    <body>
+        <h1>Corn Seed Classifier</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <input type="submit" value="Classify">
+        </form>
+        {% if predicted_class_name %}
+            <p>The predicted class is: {{predicted_class_name}}</p>
+            <p>The probability of the predicted class is: {{ "%.2f"|format(class_probability) }}</p>
+
+        {% endif %}
+    </body>
+</html>
